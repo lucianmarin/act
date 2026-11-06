@@ -1,5 +1,7 @@
 # Action Theory
 
+![illustration](illustration.jpg)
+
 **Constraint – Freedom – Roadblock (CFR)**
 *A framework in which action is fundamental. CFR is the vocabulary —
 Constraint, Freedom, Roadblock — for describing how fundamental actions

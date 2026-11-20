@@ -647,7 +647,8 @@ S\rightarrow e^{iS/\hbar}
 toward the more fundamental target:
 
 \[
-\text{composition representation}ightarrow e^{iS/\hbar}.
+\text{composition representation}
+ightarrow e^{iS/\hbar}.
 \]
 
 The latter would be more significant scientifically because it would explain why the standard action phase is the correct representation rather than merely assuming it.
@@ -1171,7 +1172,7 @@ A proposed structure is:
 ```text
 action-theory/
 ├── README.md
-├── docs/
+├── research/
 │   ├── research-purity.md
 │   ├── research-handoff.md
 │   ├── action-calculus.md
@@ -2046,7 +2047,7 @@ That is the correct standard for the next stage of the theory.
 
 1. **Action Theory repository.** `lucianmarin/action-theory`, current README and project structure. https://github.com/lucianmarin/action-theory
 2. **Action Theory M1 implementation.** `models/model_m1.py`. https://github.com/lucianmarin/action-theory/blob/main/models/model_m1.py
-3. **Action Theory research handoff.** `docs/research-handoff.md`. https://github.com/lucianmarin/action-theory/blob/main/docs/research-handoff.md
+3. **Action Theory research handoff.** `research/research-handoff.md`. https://github.com/lucianmarin/action-theory/blob/main/research/research-handoff.md
 4. Haskell 2010 Language Report, sections covering pure functional semantics and type structure. https://www.haskell.org/onlinereport/haskell2010/
 5. Moggi, E. (1991). *Notions of Computation and Monads*. Information and Computation, 93(1), 55–92. https://doi.org/10.1016/0890-5401(91)90052-4
 6. Wadler, P. (1992). *The Essence of Functional Programming*. Proceedings of the 19th ACM SIGPLAN-SIGACT Symposium on Principles of Programming Languages. https://doi.org/10.1145/143165.143169

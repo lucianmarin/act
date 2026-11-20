@@ -13,10 +13,10 @@ compose, read across physics, philosophy, economics, and human activity.*
 > primitive vocabulary, not derivations. Every claim in this repository is
 > classified as *derived, assumed, effective, predicted,* or *heuristic* (§8).
 >
-> **Companion documents:** `docs/research-manuscript.md` — Pure Functional
+> **Companion documents:** `research/research-manuscript.md` — Pure Functional
 > Dynamics, the worked functional-universe calculus (theorems + predictions
-> P-1…P-8); `docs/research-purity.md` (purity reformulation proposal);
-> `docs/mass-energy-equivalence.md` (E = mc² derivation); `notes/` (layer
+> P-1…P-8); `research/research-purity.md` (purity reformulation proposal);
+> `research/mass-energy-equivalence.md` (E = mc² derivation); `cfr/` (layer
 > translations); `models/` (M0–M5 computational scaffold). Full map in §9.
 
 ---
@@ -89,7 +89,7 @@ inside. Measurement is not a query from outside: it is the simulation forcing
 a part of itself — the universe is its own interpreter — which is why no
 external simulator is required.
 
-`docs/research-manuscript.md` makes this literal. It defines an action
+`research/research-manuscript.md` makes this literal. It defines an action
 calculus Λ_A in which the universe is a single closed term, every reduction
 step is an elementary event, superposition is an unevaluated thunk,
 entanglement is thunk sharing, and measurement is forcing. On that reading,
@@ -185,7 +185,7 @@ threshold decoherence/collapse term `Γ_F` when the freedom rank
 > something new?*
 
 ### 3.7 Purity architecture (research proposal)
-A companion paper, `docs/research-purity.md`, proposes tightening the Layer I
+A companion paper, `research/research-purity.md`, proposes tightening the Layer I
 formalism into a **pure functional calculus of actions**:
 
 ```
@@ -217,10 +217,10 @@ continuation functions, and a Roadblock becomes an empty continuation. The
 proposed first milestone, **M0**, contains only values, typed pure actions,
 composition, constraints, histories, and observational equivalence — no
 spacetime, particles, energy, or complex amplitudes.
-*Status: research proposal, unimplemented; see `docs/research-purity.md`
+*Status: research proposal, unimplemented; see `research/research-purity.md`
 for the full calculus, milestones, and falsification criteria.*
 
-A fully worked descendant of this proposal is `docs/research-manuscript.md` —
+A fully worked descendant of this proposal is `research/research-manuscript.md` —
 **Pure Functional Dynamics (PFD)**. It specifies an explicit pure action
 calculus (Λ_A) and derives, *inside that calculus*: time as reduction order,
 causality, a universal propagation bound, observer-independence (confluence),
@@ -362,8 +362,8 @@ derivation; do not insert physics or sociology and call it a consequence.*
 | Layer | Claim strength | Notes |
 |---|---|---|
 | I. Physics | speculative working theory | incomplete until the §9 derivations succeed |
-| I.7 Purity architecture | research proposal | recasts Layer I as a pure functional calculus (§3.7); milestones unmet — see `docs/research-purity.md` |
-| I.8 PFD manuscript | speculative manuscript | `docs/research-manuscript.md`: theorems inside its calculus; postulates P1–P6 unverified; predictions P-1…P-8 staked |
+| I.7 Purity architecture | research proposal | recasts Layer I as a pure functional calculus (§3.7); milestones unmet — see `research/research-purity.md` |
+| I.8 PFD manuscript | speculative manuscript | `research/research-manuscript.md`: theorems inside its calculus; postulates P1–P6 unverified; predictions P-1…P-8 staked |
 | II. Philosophy | interpretive | a coherent reading of Layer I, not a proof |
 | III. Economics | heuristic translation | converges with praxeology; not derived from `𝔄` |
 | IV. Human activity | meta-framework | useful lens for resilience & risk; not physics |
@@ -380,47 +380,54 @@ algebra does not legislate sociology. The extended layers borrow the
 **First computational target** — verify, without inserting spacetime or
 particles by hand, that the smallest finite action category
 `(𝔄, ∘, C, Z, G)` produces quantum interference, entanglement, gauge
-invariance, causal structure, stable excitations, and Roadblocks. The
-scaffolding ladder is in `models/`:
-`model_m0.py` (pure action calculus) → `model_m1.py` (complex amplitudes,
-path sums) → `model_m2.py` (freedom geometry `G_AB`, `V_F`) →
-`model_m3.py` (emergent causal structure) → `model_m4.py` (derived matter &
-energy views) → `model_m5.py` (gravity, gauge fields, Standard Model limits);
-`predictions.py` encodes the candidate testable deviations. **All are
-placeholders, not verified physics.**
+invariance, causal structure, stable excitations, and Roadblocks. Formal
+CFR proofs, conditional derivations, and open-problem classifications live in
+`cfr/cfr-proofs.md`. The executable pure-Python CFR ladder is in `models/`:
+`model_m0.py` (pure CFR action congruence & causal posets) → `model_m1.py`
+(complex amplitudes, Born rule `α = 2`, bipartite entanglement) →
+`model_m2.py` (canonical freedom geometry `G_AB`, `V_F`, Roadblock Rank
+Theorem) → `model_m3.py` (emergent causal cones & Lorentzian `(−+++)`
+signature) → `model_m4.py` (topological stiffness `m = μ`, Noether energy,
+`E = mc²`) → `model_m5.py` (`U(n)` fiber gauge holonomy & gravitational
+defect `K_μν[G]`); `predictions.py` encodes the multi-path interferometry
+falsification protocol, verified end-to-end by `tests/test_cfr.py`.
 
-**Required derivations before Layer I counts as physics:**
+**Required derivations before Layer I counts as complete physics** (status audited in `cfr/cfr-proofs.md` §1.2):
 complex amplitudes & Born rule · Lorentzian signature (−+++) · four
 macroscopic dimensions · gauge group `SU(3)×SU(2)×U(1)` · particle spectrum ·
 freedom geometry `G_F` · nonzero Roadblock correction · one quantitative
 prediction distinguishable from QM and GR.
 
-**Parallel foundations target (§3.7, `docs/research-purity.md`) — build
+**Parallel foundations target (§3.7, `research/research-purity.md`) — build
 M0**, a pure action
 calculus with only composition, identity, constraints, histories, and
 observational equivalence (no spacetime, particles, energy, or amplitudes),
 then derive matter and energy as projections (`MatterView`, `EnergyView`)
 before layering M1's amplitudes on top. Full phase plan (A–I) and
-falsification criteria in `docs/research-purity.md`; the worked calculus and
-its predictions are developed in `docs/research-manuscript.md`.
+falsification criteria in `research/research-purity.md`; the worked calculus and
+its predictions are developed in `research/research-manuscript.md`.
 
 ```
 action-theory/
 ├── README.md                       ← this file
-├── docs/
+├── research/
 │   ├── research-handoff.md         ← original physics handoff (CFR physics)
 │   ├── research-manuscript.md      ← Pure Functional Dynamics: worked action calculus (Λ_A) with theorems & predictions P-1…P-8
 │   ├── research-purity.md          ← pure-functional reformulation proposal (§3.7)
 │   └── mass-energy-equivalence.md  ← E = mc² derivation within CFR
-├── models/                         ← M0–M5 computational scaffold + predictions
-│   ├── model_m0.py                pure action calculus (no spacetime/amplitudes)
-│   ├── model_m1.py                complex amplitudes & path sums
-│   ├── model_m2.py                continuation geometry (G_AB, V_F)
-│   ├── model_m3.py                emergent spacetime / causal order
-│   ├── model_m4.py                derived matter & energy views
-│   ├── model_m5.py                gravity, gauge fields, Standard Model limits
-│   └── predictions.py             candidate testable CFR deviations
-└── notes/                          ← layer translations
+├── models/                         ← zero-dependency pure-CFR computational suite + predictions
+│   ├── model_m0.py                pure CFR action systems, state congruence & causal posets
+│   ├── model_m1.py                complex amplitudes, Born exponent α=2 & bipartite entanglement
+│   ├── model_m2.py                canonical Freedom Geometry (G_AB, V_F) & Roadblock Rank Theorem
+│   ├── model_m3.py                emergent causal cones & Lorentzian (-,+,+,+) signature
+│   ├── model_m4.py                topological stiffness (mass), Noether energy & E = mc²
+│   ├── model_m5.py                non-Abelian U(n) gauge fibers & gravitational defect K_μν[G]
+│   └── predictions.py             Kraus Roadblock decoherence & multi-path interferometry protocol
+├── tests/
+│   └── test_cfr.py                automated verification suite for all CFR theorems & models
+└── cfr/                            ← plain-language CFR, formal proofs & layer translations
+    ├── README.md                  CFR explained in plain language
+    ├── cfr-proofs.md              formal CFR theorems, conditional derivations & falsification protocol
     ├── cfr-philosophy.md          Layer II: being is stable doing
     ├── cfr-economics.md           Layer III: action as the unit of value
     └── cfr-society.md             Layer IV: action as the unit of progress
@@ -454,7 +461,7 @@ itself into being.
 
 **Is the universe literally a computer program?**
 No. The purity reformulation (§3.7) and the PFD manuscript
-(`docs/research-manuscript.md`) borrow structural properties of pure
+(`research/research-manuscript.md`) borrow structural properties of pure
 functional programming — immutability, referential transparency, explicit
 effects — as a precise language for stating the ontology, not a claim that
 reality runs on hardware. The analogy stops where physical constants and

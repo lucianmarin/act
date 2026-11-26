@@ -143,11 +143,12 @@ K(X_f, X_i) = Σ_{γ: X_i → X_f} e^{iS[γ]/ħ}
 
 Semiclassically `δS = 0` recovers stationary-action mechanics; with a linear
 state space, `iħ d|ψ⟩/dt = H|ψ⟩`.
-*Unresolved (assumed, not derived): complex amplitudes, Hilbert norm,
-unitarity, Born rule.*
+*Conditionally derived from operational composition axioms (`cfr/cfr-proofs.md`
+§4): complex amplitudes and Born rule `P = |K|²`. Open: deriving them
+unconditionally from `(𝔄, ∘)` alone.*
 
 ### 3.2 Entanglement
-Independent action structures factor, `A_AB ≅ A_A  A_B`; entangled ones do
+Independent action structures factor, `A_AB ≅ A_A ⊗ A_B`; entangled ones do
 not. **Entanglement = nonfactorizability of fundamental action
 possibilities** — correlation without controllable faster-than-light
 signalling.
@@ -156,12 +157,13 @@ signalling.
 Time emerges from causal ordering `α ≺ β`; space from the geometry of
 mutually independent action directions. If a Lorentzian metric emerges,
 `c` is the propagation rate of the null boundary of emergent action
-accessibility. *Unresolved: Lorentzian signature, four macroscopic
-dimensions.*
+accessibility. *Conditionally derived (`cfr/cfr-proofs.md` §5): Lorentzian
+`(−,+,…,+)` signature. Open: fixing `d = 3` spatial dimensions.*
 
 ### 3.4 Fields and matter
 A field is a collective coarse-grained pattern of action relationships
-(`U(1)` link curvature → Maxwell; Higgs as a vacuum order parameter).
+(`U(1)` link curvature → Maxwell; `U(n)` fiber curvature across degenerate
+states → Yang–Mills; Higgs as a vacuum order parameter).
 **Matter = stable localized action pattern** (`δS_eff/δΦ = 0`,
 `δ²S_eff > 0`); mass is its invariant rest energy, `mc² = E`.
 
@@ -217,8 +219,9 @@ continuation functions, and a Roadblock becomes an empty continuation. The
 proposed first milestone, **M0**, contains only values, typed pure actions,
 composition, constraints, histories, and observational equivalence — no
 spacetime, particles, energy, or complex amplitudes.
-*Status: research proposal, unimplemented; see `research/research-purity.md`
-for the full calculus, milestones, and falsification criteria.*
+*Status: research proposal; pure CFR M0 scaffold implemented in
+`models/model_m0.py`, while the full typed calculus milestones in
+`research/research-purity.md` remain open.*
 
 A fully worked descendant of this proposal is `research/research-manuscript.md` —
 **Pure Functional Dynamics (PFD)**. It specifies an explicit pure action
@@ -362,7 +365,7 @@ derivation; do not insert physics or sociology and call it a consequence.*
 | Layer | Claim strength | Notes |
 |---|---|---|
 | I. Physics | speculative working theory | incomplete until the §9 derivations succeed |
-| I.7 Purity architecture | research proposal | recasts Layer I as a pure functional calculus (§3.7); milestones unmet — see `research/research-purity.md` |
+| I.7 Purity architecture | research proposal | recasts Layer I as a pure functional calculus (§3.7); pure M0 scaffold in `models/model_m0.py`, full milestones open — see `research/research-purity.md` |
 | I.8 PFD manuscript | speculative manuscript | `research/research-manuscript.md`: theorems inside its calculus; postulates P1–P6 unverified; predictions P-1…P-8 staked |
 | II. Philosophy | interpretive | a coherent reading of Layer I, not a proof |
 | III. Economics | heuristic translation | converges with praxeology; not derived from `𝔄` |
@@ -390,13 +393,12 @@ Theorem) → `model_m3.py` (emergent causal cones & Lorentzian `(−+++)`
 signature) → `model_m4.py` (topological stiffness `m = μ`, Noether energy,
 `E = mc²`) → `model_m5.py` (`U(n)` fiber gauge holonomy & gravitational
 defect `K_μν[G]`); `predictions.py` encodes the multi-path interferometry
-falsification protocol, verified end-to-end by `tests/test_cfr.py`.
+falsification protocol, verified end-to-end by `tests/test_cfr.py`
+(`python3 -m unittest discover -s tests`).
 
-**Required derivations before Layer I counts as complete physics** (status audited in `cfr/cfr-proofs.md` §1.2):
-complex amplitudes & Born rule · Lorentzian signature (−+++) · four
-macroscopic dimensions · gauge group `SU(3)×SU(2)×U(1)` · particle spectrum ·
-freedom geometry `G_F` · nonzero Roadblock correction · one quantitative
-prediction distinguishable from QM and GR.
+**Required derivations before Layer I counts as complete physics** (status audited in the `cfr/cfr-proofs.md` Summary Ledger):
+- *Derived / conditionally derived:* microscopic Freedom Geometry `G_AB` · Roadblock corrections (`Γ_F`, `K_μν[G]`) · `U(n)` fiber gauge curvature · complex amplitudes & Born rule · Lorentzian `(−,+,…,+)` signature · multi-path interferometry discriminator (`§8` of `cfr/cfr-proofs.md`).
+- *Still open:* fixing `d = 3` spatial dimensions · specific gauge group `SU(3)×SU(2)×U(1)` · observed chiral particle spectrum · deriving Einstein–Hilbert / `G` directly from `(𝔄, ∘)`.
 
 **Parallel foundations target (§3.7, `research/research-purity.md`) — build
 M0**, a pure action
@@ -408,7 +410,7 @@ falsification criteria in `research/research-purity.md`; the worked calculus and
 its predictions are developed in `research/research-manuscript.md`.
 
 ```
-action-theory/
+act/
 ├── README.md                       ← this file
 ├── research/
 │   ├── research-handoff.md         ← original physics handoff (CFR physics)
@@ -439,8 +441,10 @@ action-theory/
 
 **Does Action Theory disprove singularities?**
 Not yet. It *reframes* them as Roadblocks — failures of the emergent metric
-where `det G = 0` — and predicts a correction `λ_F K_μν`, but that correction
-must still be derived.
+where `det G = 0` — with a derived Freedom-Defect tensor `K_μν[G]`
+(`cfr/cfr-proofs.md` §7.2, `models/model_m5.py`) that surges as `det G → 0`,
+though deriving Einstein–Hilbert and full singularity resolution
+microscopically from `(𝔄, ∘)` remains open.
 
 **Is energy fundamental?**
 No. Energy is an emergent conserved invariant of action histories (the
